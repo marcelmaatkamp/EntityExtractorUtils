@@ -55,9 +55,16 @@ allprojects {
     compile "org.codehaus.jettison:jettison:1.2"
     compile "dnsjava:dnsjava:2.1.0"
     compile "mysql:mysql-connector-java:5.1.13"
+
     compile "org.slf4j:slf4j-api:1.6.1"
-    // compile "org.slf4j:slf4j-simple:1.6.1"
+    compile "org.slf4j:slf4j-simple:1.6.1"
     compile "org.slf4j:slf4j-jdk14:1.6.1"
+    compile "org.slf4j:slf4j-log4j12:1.6.1"
+
+    // compile "org.slf4j:slf4j-api:1.5.10"
+    // compile "org.slf4j:slf4j-jdk14:1.5.10"
+    // compile "org.slf4j:slf4j-log4j12:1.5.10"
+
     compile "edu.stanford.nlp:stanford-ner:1.1.1"
     compile "edu.stanford.nlp:stanford-ner-models:1.1.1"
 
@@ -69,6 +76,14 @@ allprojects {
     compile "com.aliasi:lingpipe:4.0.1"
     compile "org.apache.xmlgraphics:fop:1.0"
     compile "org.apache.ivy:ivy:2.1.0"
+ 
+// --
+    compile 'org.apache.mahout.hadoop:hadoop-core:0.19.1'
+    compile 'org.apache.nutch:nutch:1.3'
+    compile 'org.apache.tika:tika-core:0.9'
+    compile 'org.apache.tika:tika-parsers:0.9'
+    compile 'commons-lang:commons-lang:2.2'
+
   }
  
   defaultTasks "produceJson"
@@ -130,6 +145,16 @@ allprojects {
     classpath = sourceSets.main.runtimeClasspath
     maxHeapSize = "2G"
   }
+
+  // --
+
+  task ("nutchExtractor", dependsOn: 'classes', type: JavaExec) {
+    main = "nutch.NutchTikaExtractor"
+    classpath = sourceSets.main.runtimeClasspath
+    args "bla"
+    maxHeapSize = "2G"
+  }
+
 
 }
 
