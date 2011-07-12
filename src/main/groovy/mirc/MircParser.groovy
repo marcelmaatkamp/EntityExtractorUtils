@@ -3,6 +3,8 @@ package mirc
 import java.text.SimpleDateFormat
 import groovy.sql.Sql
 import org.apache.commons.io.FileUtils
+import org.springframework.data.keyvalue.riak.core.RiakTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 // create table chatfiles( id BIGINT(20) NOT NULL AUTO_INCREMENT, canonicalPath varchar(255), checksum varchar(255), timestamp TIMESTAMP NULL DEFAULT NULL, PRIMARY KEY (id)) ENGINE=MyISAM;
 // create index chatfiles_idx_id on chatfiles(id);
@@ -15,8 +17,9 @@ import org.apache.commons.io.FileUtils
 class MircParser { 
 
   static void main(args) { 
-    def filename = "src/main/resources/#Lulzsec.hell.allyoursecretsbelongto.us.log"
-    def parser = new MircParser().parse(filename)
+println "args: $args"
+    def filename = "/Users/marcel/projects/#Lulzsec.hell.allyoursecretsbelongto.us_2.log"
+    //def parser = new MircParser().parse(filename)
   }
 
   def parse(filename) { 
@@ -33,9 +36,13 @@ class MircParser {
 
     def file = new File(filename)
     def checksum = getSHAsum(file)
-    def file_id = sql.executeInsert("insert into chatfiles(canonicalPath, checksum, timestamp) VALUES (?,?,?)", [file.canonicalPath, checksum, new Date()])[0][0]
+    // def file_id = sql.executeInsert("insert into chatfiles(canonicalPath, checksum, timestamp) VALUES (?,?,?)", [file.canonicalPath, checksum, new Date()])[0][0]
 
+    def oldLine = "", newLine = ""
     file.eachLine { line, index ->
+    newLine = line
+
+    if(newLine!=oldLine) { 
 
       int state = 0
       def username = ""
@@ -70,13 +77,13 @@ class MircParser {
           state = line.substring(0,2) as int 
           line = line.substring(2)
         }
-         
+           
         def time = new GregorianCalendar(new Locale("NL", "nl"))
         time.setTime(new SimpleDateFormat("HH:mm").parse(line.substring(1, line.indexOf("]"))))
         if(calendar != null) {
-            calendar.set(Calendar.HOUR_OF_DAY, time.get(Calendar.HOUR_OF_DAY))
-            calendar.set(Calendar.MINUTE, time.get(Calendar.MINUTE))
-            calendar.set(Calendar.SECOND, 00)
+          calendar.set(Calendar.HOUR_OF_DAY, time.get(Calendar.HOUR_OF_DAY))
+          calendar.set(Calendar.MINUTE, time.get(Calendar.MINUTE))
+          calendar.set(Calendar.SECOND, 00)
         }
         line  = line.substring(line.indexOf("]")+2)
     
@@ -86,7 +93,7 @@ class MircParser {
         } else if(line.startsWith("* ")) { 
           line = line.substring(2)
           if(line.startsWith("Now talking in ") || line.startsWith("Set by") || line.startsWith("Topic is") || line.startsWith("Disconnected") ) { 
-    
+      
           } else { 
             username = line.substring(0, line.indexOf(" ")) 
             if(!aliases.containsKey(username)) { 
@@ -110,9 +117,23 @@ class MircParser {
           }
         }
         println index + "\t [$state] \t" + sdf_date.format(calendar.time) + "\t" + sdf_time.format(calendar.time) +"\t $username \t $line"
-        def line_id = sql.executeInsert("insert into chatlines(chatfile_id,timestamp,linenumber,username,line) VALUES (?,?,?,?,?)", [file_id, calendar.time, index, username, line])[0][0]
+        // def line_id = sql.executeInsert("insert into chatlines(chatfile_id,timestamp,linenumber,username,line) VALUES (?,?,?,?,?)", [file_id, calendar.time, index, username, line])[0][0]
+      }
+      oldLine = newLine 
     }
   }
+
+  @Autowired
+  RiakTemplate riak;
+
+  public void setData(String bucket, String key, String data) throws Exception {
+      riak.set(bucket, key, data); // Set as Content-Type: text/plain
+      riak.setAsBytes(bucket, key, data.getBytes()); // Set as Content-Type: application/octet-stream
+  }
+  
+  // public void setData(String bucket, String key, MyPojo data) throws Exception {
+  //     riak.set(bucket, key, data); // Converted to JSON automatically, Content-Type: application/json
+  // }
 
   public static String getSHAsum(File file) {
     def shasum = java.security.MessageDigest.getInstance("SHA-256").digest(file.bytes);
