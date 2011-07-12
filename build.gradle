@@ -12,6 +12,9 @@ allprojects {
   targetCompatibility = 1.6 
   
   repositories {
+    mavenRepo name: 'plugins-repo', urls: "http://192.168.1.108:8085/artifactory/plugins-release"
+    mavenRepo name: 'libs-repo', urls: "http://192.168.1.108:8085/artifactory/libs-release"
+
     if (hasProperty('repo')) {
       localRepo=repo
     } else {
@@ -83,7 +86,9 @@ allprojects {
     compile 'org.apache.tika:tika-core:0.9'
     compile 'org.apache.tika:tika-parsers:0.9'
     compile 'commons-lang:commons-lang:2.2'
-
+     compile 'org.apache.mahout.commons:commons-cli:2.0-mahout'
+    compile 'commons-cli:commons-cli:1.2'
+    compile 'org.apache.commons:commons-cli:2.0-SNAPSHOT'
   }
  
   defaultTasks "produceJson"
@@ -155,6 +160,26 @@ allprojects {
     maxHeapSize = "2G"
   }
 
+  task ("nutchTikaExtractor", dependsOn: 'classes', type: JavaExec) {
+    main = "nutch.NutchTikaExtractor"
+    classpath = sourceSets.main.runtimeClasspath
+    args "bla"
+    maxHeapSize = "2G"
+  }
+
+  task ("nutchFilenameExtractor", dependsOn: 'classes', type: JavaExec) {
+    main = "nutch.NutchFilenameExtractor"
+    classpath = sourceSets.main.runtimeClasspath
+    args "bla"
+    maxHeapSize = "2G"
+  }
+
+  task ("nutchSearch", dependsOn: 'classes', type: JavaExec) {
+    main = "nutch.NutchSearch"
+    classpath = sourceSets.main.runtimeClasspath
+    args "crawl/crawldb crawl/segments topN 5000"
+    maxHeapSize = "2G"
+  }
 
 }
 
