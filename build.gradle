@@ -12,9 +12,11 @@ allprojects {
   targetCompatibility = 1.6 
   
   repositories {
-    mavenRepo name: 'plugins-repo', urls: "http://192.168.1.108:8085/artifactory/plugins-release"
-    mavenRepo name: 'libs-repo', urls: "http://192.168.1.108:8085/artifactory/libs-release"
 
+     mavenRepo name: 'plugins-repo-local', 	urls: "http://127.0.0.1:8085/artifactory/plugins-release"
+     mavenRepo name: 'libs-repo-local',		urls: "http://127.0.0.1:8085/artifactory/libs-release"
+     mavenRepo name: 'plugins-repo-asrock', 	urls: "http://192.168.1.108:8085/artifactory/plugins-release"
+     mavenRepo name: 'libs-repo-asrock',    	urls: "http://192.168.1.108:8085/artifactory/libs-release"
     if (hasProperty('repo')) {
       localRepo=repo
     } else {

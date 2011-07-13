@@ -1,0 +1,219 @@
+#LyX 1.6.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass politie-pv
+\options xetex
+\use_default_options true
+\language dutch
+\inputencoding utf8-plain
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+
+\begin_layout Standard
+
+\begin_inset Flex DocumentNummer
+status collapsed
+
+\begin_layout Plain Layout
+{pvnr}
+\end_layout
+
+\end_inset
+
+\begin_inset Flex VoorbladPV
+status collapsed
+
+\end_inset
+
+\begin_inset Flex PVTypeOnderzoek
+status collapsed
+
+\end_inset
+
+\begin_inset Flex Onderwerp
+status collapsed
+
+\begin_layout Plain Layout
+Chatlogs
+\end_layout
+
+\end_inset
+
+\end_layout
+\begin_layout Title
+{title}
+\end_layout
+\begin_layout Section
+Verbalisant
+\end_layout
+\begin_layout Standard
+\begin_layout Plain Layout
+Hierbij verklaar ik, Bastiaan Eikelenboom, inspecteur van politie, werkzaam als expert B, senior digitaal rechercheur bij het Korps Landelijke Politiediensten, Dienst Nationale Recherche te Driebergen het volgende:
+\end_layout
+\end_layout
+
+\begin_layout Section
+Aanleiding
+\end_layout
+\begin_layout Standard
+\begin_layout Plain Layout
+In juni 2011 kwamen er bij het Team High Tech Crime van de Nationale Recherche van het Korps Landelijke Politiediensten aanwijzingen binnen dat een aantal personen die aanwezig waren in een openbaar IRC-chat kanaal "antisec" op het IRC-netwerk "AnonOps" (en in gebruik bij "Anonymous"), zich afzonderden in een apart openbare IRC-chat kanaal "#antisecnl".
+Deze groepering verhuisde naar een eigen privé IRC-server "irc.xymic.nl", die zich in Nederland bevindt en het IP-adres 178.18.91.115 heeft. Dit IRC-chat kanaal genaamd "#lulzsec" is niet openbaar toegankelijk. Uit de chatgesprekken blijkt, dat de aanwezigen op dit kanaal een Nederlandse variant van "antisec" wilden oprichten met als doel om zoveel mogelijk websites te hacken, gegevens te downloaden en openbaar te maken.
+\end_layout
+\begin_layout Plain Layout
+Op vrijdag 01 juli 2011 werd, naar aanleiding van de verkregen informatie, onder leiding van de officier van justitie, Mr. L.J.A. van Zwieten, behorende tot het Landelijk Parket te Rotterdam, een opsporingsonderzoek gestart onder de naam ENIAC.
+\end_layout
+\begin_layout Plain Layout
+Een deel van de in het IRC-chat kanaal "#lulzsec" gevoerde chats waren gelogd en opgeslagen.
+Op grond van artikel 126nd Wetboek van Strafvordering werd op vrijdag 01 juli 2011 door de Officier van Justitie mr. L.J.A. van Zwieten mondelinge vorderingen gedaan om de logging-gegevens te verstrekken van het chatkanaal "Lulzsec". 
+Op zaterdag 02 juli 2011 werden deze gegevens verstrekt. Hiervan is proces-verbaal opgemaakt onder nummer 29788732.
+\end_layout
+\begin_layout Plain Layout
+Uit de gevoerde chatgesprekken kan herleid worden dat er in dit IRC-chat kanaal ""#lulzsec", circa 13 leden actief zijn, die allen gebruik maken van een nickname. 
+Tevens kan herleid worden dat de leden van deze groep betrokken waren bij gepleegde strafbare feiten, zoals blijkt uit de aangifte namens "bronkerk" ; namenlijk door middel van een SQL-injectie werd de database behorende bij de website "bronkerk.nl"  weggenomen en de informatie uit die database was gebruikt om in te loggen in het onderhoudsgedeelte van die site. 
+\end_layout
+\begin_layout Plain Layout
+Uit ingesteld onderzoek in open bronnen blijkt dat het ‘hackerscollectief‘ LulzSec een organisatie is die in de maanden mei en juni 2011 de verantwoordelijkheid heeft opgeëist voor aanvallen op onder meer de CIA, de Amerikaanse Senaat en grote entertainmentbedrijven zoals Sony. Het voornaamste doel volgens LulzSec is het stelen en lekken van vertrouwelijke overheidsgegevens, waaronder e-mails en documentatie. Naast overheden gaat het ook om banken en andere belangrijke instellingen. In de media wordt bericht, dat het collectief bestaat uit leden van Anonymous. De groep, een grotere en losser georganiseerd collectief, probeert hackers te verenigen om aanvallen te plegen op doelwitten die zij als immoreel beschouwen. LulzSec zocht vooral publiciteit en berichtte ook veelal via Twitter. 
+\end_layout
+\begin_layout Plain Layout
+Uit de gelogde en opgeslagen chatgesprekken blijkt, dat de deelnemers van het niet openbare IRC-chatkanaal #LulzSec een Nederlandse variant van "antisec" hebben opgericht, met als doel om zoveel mogelijk websites te hacken, gegevens te downloaden en openbaar te maken.
+\end_layout
+\begin_layout Plain Layout
+Door de officier van justitie, Mr. L.J.A. van Zwieten werd op 2 juli 2011 te 19.30 uur mondeling het bevel gegeven  dat er stelselmatig informatie ingewonnen wordt over verdachten, die deelnemen aan het IRC-chat kanaal #lulzsec, zoals opgenomen in artikel 126j van het Wetboek van Strafvordering. Dit bevel houdt in dat een opsporingsambtenaar zich in het IRC-chat kanaal #lulzsec ophoudt zonder zich als zodanig bekend te maken.
+Dit mondeling gegeven bevel ex artikel 126j Wetboek van Strafvordering werd op 6 juli 2011 schriftelijk bevestigd door voornoemde officier van justitie, Mr. L.J.A. van Zwieten onder vermelding van parketnummer 10/960168-11.
+Dit bevel heeft het proces-verbaal nummer 29794237 in onderzoek ENIAC.
+\end_layout
+\end_layout
+
+\begin_layout Section
+Veilig stellen gesprekken
+\end_layout
+\begin_layout Standard
+\begin_layout Plain Layout
+Door het team High Tech Crime werden de gesprekken die door verdachten in genoemde IRC- chatkanaal  #lulzsec gevoerd werden geregistreerd vanaf het moment dat het bevel ex artikel 126j Wetboek van Strafvordering daartoe mondeling werd gegeven, te weten vanaf 2 juli 2011 te 19.30 uur.
+\end_layout
+\begin_layout Plain Layout
+Iedere afzonderlijke chatregel is met vermelding van datum, tijdstip en nickname opgenomen en vastgelegd in een logbestand, opgeslagen in het daarvoor bestemde systeem van het Team High tech Crime.
+\end_layout
+\begin_layout Plain Layout
+De originele en onbewerkte logbestanden zijn digitaal beschikbaar bij het Team High Tech Crime en kunnen digitaal op CD-Rom danwel DVD bijgevoegd worden.
+\end_layout
+\begin_layout Plain Layout
+Het in dit proces-verbaal opgenomen tekstdeel van het logbestand is een bewerkte versie van een deel van het originele logbestand. Dit betreft namelijk een leesbaar geheel van het originele bestand doordat het bestand is ontdaan van de (voor dit doel overbodige) verkeersgegevens.
+\end_layout
+\end_layout
+
+\begin_layout Section
+Inhoud van de veiliggestelde gesprekken in het IRC kanaal #lulzsec
+\end_layout
+\begin_layout Standard
+\begin_layout Plain Layout
+Hieronder wordt weergegeven de inhoud van het logbestand: 
+\end_layout
+\end_layout
+
+\begin_layout Standard
+
+\begin_layout Plain Layout
+{chattekst}
+\end_layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Het logbestand is bewerkt, in de zin van dat het is ontdaan van de verkeersgegevens waardoor een meer leesbaar geheel is ontstaan. De originele en onbewerkte chatlogs zijn digitaal bijgevoegd op CD-ROM danwel DVD
+\end_layout
+
+\end_layout
+\begin_layout Section
+Verbalisant
+\end_layout
+
+\begin_layout Standard
+
+\begin_layout Plain Layout
+Ik heb hiervan op ambtseed opgemaakt dit proces-verbaal, dat ik sloot en tekende te Driebergen op {tijdstip_verbaal}
+\end_layout
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_layout Plain Layout
+De verbalisant voornoemd,
+\end_layout
+
+\end_layout
+
+\begin_layout Figuur
+
+\begin_inset Flex Figuur
+status collapsed
+
+\begin_layout Plain Layout
+handtekening.png
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Flex PVOndertekening
+status collapsed
+
+\begin_layout Plain Layout
+B. Eikelenboom
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "PoLyTeX-Systeem/woordenlijst/woordenlijst.lyx"
+\end_inset
+
+\end_layout
+
+
+\end_body
+\end_document
