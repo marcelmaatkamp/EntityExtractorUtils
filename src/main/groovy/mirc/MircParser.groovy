@@ -20,7 +20,7 @@ class MircParser {
   }
 
   def parse(filename) { 
-    def sql = Sql.newInstance("jdbc:mysql://localhost:3306/mirc", "grails", "grails", "com.mysql.jdbc.Driver")
+    // def sql = Sql.newInstance("jdbc:mysql://localhost:3306/mirc", "grails", "grails", "com.mysql.jdbc.Driver")
 
     Calendar calendar =  GregorianCalendar.getInstance()
     calendar.lenient = false
