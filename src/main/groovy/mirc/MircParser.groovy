@@ -153,6 +153,7 @@ ${username}
 \\begin_inset Flex GesprekRegelWanneer
 status collapsed
 \\begin_layout Plain Layout
+${index}
 \\end_layout
 \\end_inset
 \\begin_inset Flex GesprekRegelWat
