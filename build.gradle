@@ -188,5 +188,12 @@ allprojects {
     maxHeapSize = "2G"
   }
 
+  task ("tika", dependsOn: 'classes', type: JavaExec) {
+    main = "util.TikaExplorer"
+    classpath = sourceSets.main.runtimeClasspath
+    args "crawl/crawldb crawl/segments topN 5000"
+    maxHeapSize = "2G"
+  }
+
 }
 
