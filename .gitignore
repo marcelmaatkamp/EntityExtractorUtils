@@ -30,3 +30,5 @@
 /performanceTest/lib
 .textmate
 .*.swp
+craw/
+extracted/
