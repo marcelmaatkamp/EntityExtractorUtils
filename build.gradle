@@ -48,7 +48,6 @@ allprojects {
     mavenRepo(urls: "http://maven.deathmarch.jp/maven2/")
 */
     mavenCentral()
-*/
   }
   dependencies {
     compile files(fileTree(dir: 'lib', includes: ['*.jar'])) 
