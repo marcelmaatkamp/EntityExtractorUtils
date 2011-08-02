@@ -23,6 +23,7 @@ allprojects {
       localRepo="file://" + System.getProperty('user.home') + "/.m2/repository/"
     }
     mavenRepo urls: localRepo
+/**
     mavenRepo(urls: "http://mirrors.ibiblio.org/pub/mirrors/")
     mavenRepo(urls: "http://download.java.net/maven/2/")
     mavenRepo(urls: "http://repository.codehaus.org")
@@ -45,7 +46,7 @@ allprojects {
 
  // natlang detect in tika
     mavenRepo(urls: "http://maven.deathmarch.jp/maven2/")
-
+*/
     mavenCentral()
   }
   dependencies {
