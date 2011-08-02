@@ -23,6 +23,7 @@ allprojects {
       localRepo="file://" + System.getProperty('user.home') + "/.m2/repository/"
     }
     mavenRepo urls: localRepo
+/**
     mavenRepo(urls: "http://mirrors.ibiblio.org/pub/mirrors/")
     mavenRepo(urls: "http://download.java.net/maven/2/")
     mavenRepo(urls: "http://repository.codehaus.org")
@@ -40,8 +41,8 @@ allprojects {
     mavenRepo(urls: "http://maven.springframework.org.s3.amazonaws.com/release/")
     mavenRepo(urls: "http://m2.neo4j.org/")
     mavenRepo(urls: "http://repo.open.med.harvard.edu/nexus/content/repositories/thirdparty")
-
     mavenCentral()
+*/
   }
   dependencies {
     // runtime group: 'org.groovy', name: 'groovy', version: '1.7.10', ext: 'jar'
