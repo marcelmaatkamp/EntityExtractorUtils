@@ -96,14 +96,18 @@ class NutchFilenameExtractor {
             def contentLocation = nutchContent.metadata.get("Location")
             def contentType = nutchContent.metadata.get("Content-Type")
 
-            def type = tika.detect(content, contentUrl as String)
+            // def type = tika.detect(content, contentUrl as String)
 
             if( contentType == null) {    
               contentType = nutchContentType
             }
+            if(contentType.contains(";")) { 
+              contentType = contentType.substring(0, contentType.indexOf(";")-1)
+            }
 
             // println "$key,$contentLength bytes"
-            println "<tr><td>$contentType</td><td>$contentLength</td><td><a href=\"$key\">$key</a></td></tr>"
+            // println "<tr><td>$contentType</td><td>$contentLength</td><td><a href=\"$key\">$key</a></td></tr>"
+            println "$key,$contentType,$contentLength"
 
             // println "key[$key]: $contentBase -> $contentUrl type[$type] [$nutchContentType/$contentType] $contentLength bytes"
           }

@@ -205,8 +205,8 @@ println "$annotation: $valueWord"
               def cameraId = metadata.get("Camera Id")?.trim()
               def cameraModel = metadata.get("Model")?.trim()
               def cameraMake = metadata.get("Make")?.trim()
-              def width  = (metadata.get("width"):metadata.get("width")?metadata.get("Image Width"))?.trim()
-              def height = (metadata.get("height"):metadata.get("height")?metadata.get("Image Height"))?.trim()
+              def width  = (metadata.get("width")?metadata.get("width"):metadata.get("Image Width"))?.trim()
+              def height = (metadata.get("height")?metadata.get("height"):metadata.get("Image Height"))?.trim()
               def lat = metadata.get("geo:lat")?.trim()
               def lng = metadata.get("geo:long")?.trim()
               if(width && width.endsWith(" pixels")) { 
