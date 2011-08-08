@@ -224,4 +224,9 @@ allprojects {
     maxHeapSize = "2G"
   }
 
+  task ("spring.message", dependsOn: 'classes', type: JavaExec) {
+    main = "spring.SpringMessageStarter"
+    classpath = sourceSets.main.runtimeClasspath
+  }
+
 }
