@@ -4,18 +4,8 @@
   xmlns:lang="http://www.springframework.org/schema/lang"
   xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd">
 
-  <lang:groovy id="messenger" script-source="classpath:spring.Message.groovy">
+  <lang:groovy id="messenger" script-source="file:src/main/groovy/spring/GroovyMessage.groovy">
     <lang:property name="message" value="I Can Do The Frug" />
   </lang:groovy>
-
-  <bean id="country1" class="spring.Australia">
-    <property name="capital" value="Canberra"/>
-    <property name="population" value="20264082"/>
-  </bean>
-
-  <bean id="country2" class="spring.USA">
-    <constructor-arg value="Washington, D.C."/>
-    <constructor-arg value="298444215"/>
-  </bean>
 
 </beans>

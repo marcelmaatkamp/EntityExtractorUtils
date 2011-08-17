@@ -128,7 +128,8 @@ parser.setFeature('http://xml.org/sax/features/namespaces', false)
                   if(u.endsWith("/")) { 
                     u = u.substring(0,u.length()-1)
                   }
-                  println "[$key] $link [->] $u"
+                  // println "[$key] $link [->] $u"
+                  println "$key,$link,$u"
                   links += [u]
                 }
               }
@@ -137,7 +138,7 @@ parser.setFeature('http://xml.org/sax/features/namespaces', false)
 // println "[$key] $links "
 
             } else { 
-              println "[$key] -> empty"
+              // println "[$key] -> empty"
             }
           }
           reader.close();

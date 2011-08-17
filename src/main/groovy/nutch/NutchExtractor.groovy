@@ -102,12 +102,16 @@ class NutchExtractor {
               try { 
                 def newLength = nutchContent.metadata.get("Content-Length") as int 
                 if(!f.exists()) { 
-                  println "[$key] [$contentType] [$newLength] $filename"
+                  println "[$key] [$contentType] [$newLength] $filename "
                   f.createNewFile()
                   f << nutchContent.content
                 } else {
                   if(f.length() < newLength) { 
-                    println "[$key] already exists, but old.size($f.length()) and new.size($newLength)  .. "
+                    // println "[$key] already exists, but old.size("+f.length()+") and new.size($newLength)  .. "
+                    println "[$key] [$contentType] ["+f.length()+" -> $newLength] $filename "
+                    f.delete()
+                    f.createNewFile()
+                    f << nutchContent.content
                   } else { 
                     println "[$key] already exists "
                   }
