@@ -207,12 +207,23 @@ sourceSets.main.groovy.srcDirs = ["src/main/java", "src/main/groovy"]
     maxHeapSize = "2G"
   }
 
+// -=[ Nutch Search ]=- //
+
+  task ("nutch.generate", dependsOn: 'classes', type: JavaExec) {
+    main = "nutch.core_1_3.Generate"
+    classpath = sourceSets.main.runtimeClasspath
+    args  "crawl/crawldb","crawl/segments","-topN 5000"
+    maxHeapSize = "2G"
+  }
+
   task ("nutchSearch", dependsOn: 'classes', type: JavaExec) {
     main = "nutch.core.NutchSearch"
     classpath = sourceSets.main.runtimeClasspath
     args  "crawl/crawldb","crawl/segments","-topN 5000"
     maxHeapSize = "2G"
   }
+
+// -=[ Nutch Search ]=- //
 
   task ("nutchExport", dependsOn: 'classes', type: JavaExec) {
     main = "nutch.util.NutchDBExport"
