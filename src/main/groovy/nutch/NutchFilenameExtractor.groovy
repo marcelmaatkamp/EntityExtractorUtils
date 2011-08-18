@@ -107,9 +107,9 @@ class NutchFilenameExtractor {
 
             // println "$key,$contentLength bytes"
             // println "<tr><td>$contentType</td><td>$contentLength</td><td><a href=\"$key\">$key</a></td></tr>"
-            println "$key,$contentType,$contentLength"
+            // println "$key,$contentType,$contentLength,"+nutchContent
 
-            // println "key[$key]: $contentBase -> $contentUrl type[$type] [$nutchContentType/$contentType] $contentLength bytes"
+            println "key[$key]: $contentBase -> $contentUrl type[$type] [$nutchContentType/$contentType] $contentLength bytes"
           }
           reader.close();
         }

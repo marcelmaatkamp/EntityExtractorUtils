@@ -10,6 +10,9 @@ allprojects {
 
   sourceCompatibility = 1.6
   targetCompatibility = 1.6 
+
+compileJava.enabled = false
+sourceSets.main.groovy.srcDirs = ["src/main/java", "src/main/groovy"]
   
   repositories {
 
@@ -89,6 +92,7 @@ allprojects {
     compile "com.aliasi:lingpipe:4.0.1"
     compile "org.apache.xmlgraphics:fop:1.0"
     compile "org.apache.ivy:ivy:2.1.0"
+    compile "net.sourceforge.htmlunit:htmlunit:2.4"
 
  // https://s3browse.springsource.com/browse/maven.springframework.org/milestone/org/springframework/data/
     compile "org.springframework.data:spring-data-neo4j:1.0.0.RC1"
@@ -236,8 +240,20 @@ allprojects {
   }
 
   task ("spring.message", dependsOn: 'classes', type: JavaExec) {
-    main = "spring.SpringMessageStarter"
+println "cp: "+sourceSets.main.runtimeClasspath
+    main = "spring.GroovyMessage"
+ // classpath = buildscript.configurations.classpath
     classpath = sourceSets.main.runtimeClasspath
   }
+
+
+  task ("htmlTitlePrinter", dependsOn: 'classes', type: JavaExec) {
+    main = "util.html.HtmlTitlePrinter"
+    classpath = sourceSets.main.runtimeClasspath
+    args "/home/marcel/projects/EntityExtractorUtils/nutchExport.host.txt"
+    systemProperty 'socksProxyHost', '192.168.1.108'
+    systemProperty 'socksProxyPort', '9050'
+  }
+
 
 }
