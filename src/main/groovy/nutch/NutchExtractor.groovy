@@ -54,6 +54,15 @@ import org.xml.sax.helpers.DefaultHandler
  
 class NutchExtractor {
 
+  public static String getSHAsum(File file) {
+    def shasum = java.security.MessageDigest.getInstance("SHA-256").digest(file.bytes);
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0; i < shasum.length; i++) {
+      sb.append(Integer.toString((shasum[i] & 0xff) + 0x100, 16).substring(1));
+    }
+    return sb.toString()
+  }
+
   def MAX_FILE_LENGTH = 150
 
   static void main(String[] args) {
@@ -102,16 +111,18 @@ class NutchExtractor {
               try { 
                 def newLength = nutchContent.metadata.get("Content-Length") as int 
                 if(!f.exists()) { 
-                  println "[$key] [$contentType] [$newLength] $filename "
                   f.createNewFile()
                   f << nutchContent.content
+                  def shasum = getSHAsum(f)
+                  println "[$key] [$contentType] [$newLength] s[$shasum] $filename "
                 } else {
                   if(f.length() < newLength) { 
                     // println "[$key] already exists, but old.size("+f.length()+") and new.size($newLength)  .. "
-                    println "[$key] [$contentType] ["+f.length()+" -> $newLength] $filename "
                     f.delete()
                     f.createNewFile()
                     f << nutchContent.content
+                    def shasum = getSHAsum(f)
+                    println "[$key] [$contentType] ["+f.length()+" -> $newLength] s[$shasum] $filename "
                   } else { 
                     println "[$key] already exists "
                   }
