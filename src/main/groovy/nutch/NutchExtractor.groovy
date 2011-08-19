@@ -78,8 +78,8 @@ class NutchExtractor {
     def fs = FileSystem.parseArgs(argv, 0, conf);
 
     try {
-      String nutchLocation = "/media/current/projects/nutch-1.3/runtime/local/"
-      new File(nutchLocation + "crawl/segments").eachFile { file ->
+      String nutchLocation = "/Volumes/Descartes-1/"
+      new File(nutchLocation + "crawler_data/segments").eachFile { file ->
         String segment = file.canonicalPath
         if(new File(segment + "/content/part-00000/data").exists()) { 
           Path path = new Path(segment, Content.DIR_NAME + "/part-00000/data");
